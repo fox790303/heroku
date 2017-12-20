@@ -31,6 +31,7 @@ class Logger
      */
     public function __construct($fileName)
     {
+        file_exists('./logs') or mkdir('./logs');
         $this->fileName = './logs/'.$fileName.'.%s.log';
         $this->pid = getmypid();
     }
