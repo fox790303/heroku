@@ -13,6 +13,7 @@ $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($accessToken);
 $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $channelSecret]);
 $response = $bot->getMessageContent($messageId);
 if ($response->isSucceeded()) {
+    header('Content-Type: image/jpeg');
     $tempfile = tmpfile();
     fwrite($tempfile, $response->getRawBody());
 } else {
