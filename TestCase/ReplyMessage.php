@@ -12,7 +12,7 @@ class ReplyMessage {
         $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($token);
         $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $secret]);
         
-        $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('This is Reply Message');
+        $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('This is Reply Message 1', 'This is Reply Message 2');
         $response = $bot->replyMessage($replyToken, $textMessageBuilder);
         
         return $response->getHTTPStatus() . ' |' . $response->getRawBody();

@@ -13,8 +13,8 @@ class MulticastMessage {
         
         $obj['to'] = array($source->userId);
         $obj['messages'] = array();
-        $obj['messages'][] = array('type' => 'text', 'text' => 'multi 1');
-        $obj['messages'][] = array('type' => 'text', 'text' => 'multi 2');
+        $obj['messages'][] = array('type' => 'text', 'text' => 'This is multi 1');
+        $obj['messages'][] = array('type' => 'text', 'text' => 'This is multi 2');
         $json = json_encode($obj);
         
         $ch = curl_init();

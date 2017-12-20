@@ -14,8 +14,8 @@ print_r($postData);
 if( !empty($postData->events) ) {
     switch ($postData->events[0]->type) {
         case "message":
-            //$response = ReplyMessage::doTest($postData->events[0], $accessToken, $channelSecret);
-            //$response = PushMessage::doTest($postData->events[0], $accessToken, $channelSecret);
+            $response = ReplyMessage::doTest($postData->events[0], $accessToken, $channelSecret);
+            $response = PushMessage::doTest($postData->events[0], $accessToken, $channelSecret);
             $response = MulticastMessage::doTest($postData->events[0], $accessToken, $channelSecret);
             $log->info('RESPONSE |'.$response);
             break;
