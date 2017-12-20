@@ -31,11 +31,8 @@ class Logger
      */
     public function __construct($fileName)
     {
-        $CI = &get_instance();
-        $this->logLevelNum = $CI->config->item('log_threshold');
-        $this->fileName = APPPATH.'logs/'.$fileName.'.%s.log';
+        $this->fileName = './logs/'.$fileName.'.%s.log';
         $this->pid = getmypid();
-		//$this->pid = 1;
     }
 
     /**
@@ -47,9 +44,7 @@ class Logger
      */
     public function info($content)
     {
-        if ($this->logLevelNum >= self::LOG_LEVEL_INFO_NUM) {
-            $this->writeLog(self::LOG_LEVEL_INFO, $content);
-        }
+        $this->writeLog(self::LOG_LEVEL_INFO, $content);
     }
 
     /**
@@ -61,9 +56,7 @@ class Logger
      */
     public function debug($content)
     {
-        if ($this->logLevelNum >= self::LOG_LEVEL_DEBUG_NUM) {
-            $this->writeLog(self::LOG_LEVEL_DEBUG, $content);
-        }
+        $this->writeLog(self::LOG_LEVEL_DEBUG, $content);
     }
 
     /**
@@ -75,9 +68,7 @@ class Logger
      */
     public function warn($content)
     {
-        if ($this->logLevelNum >= self::LOG_LEVEL_WARN_NUM) {
-            $this->writeLog(self::LOG_LEVEL_WARN, $content);
-        }
+        $this->writeLog(self::LOG_LEVEL_WARN, $content);
     }
 
     /**
@@ -89,9 +80,7 @@ class Logger
      */
     public function error($content)
     {
-        if ($this->logLevelNum >= self::LOG_LEVEL_ERROR_NUM) {
-            $this->writeLog(self::LOG_LEVEL_ERROR, $content);
-        }
+        $this->writeLog(self::LOG_LEVEL_ERROR, $content);
     }
 
     /**
