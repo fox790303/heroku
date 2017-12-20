@@ -15,7 +15,8 @@ print_r($postData);
 if( !empty($postData->events) ) {
     switch ($postData->events[0]->type) {
         case "message":
-            ReplyMessage::doTest($postData->events[0], $accessToken, $channelSecret);
+            $response = ReplyMessage::doTest($postData->events[0], $accessToken, $channelSecret);
+            $log->info('RESPONSE |'.$response);
             break;
         case "follow":
             break;
